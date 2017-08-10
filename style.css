@@ -1,0 +1,40 @@
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+header {
+  text-align: center;
+}
+
+header h3 {
+  font-style: italic;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+}
+
+.search-input {
+  flex-basis: 70%;
+  flex-shrink: 3;
+}
+
+button {
+  flex-basis: 10%;
+  flex-shrink: 1;
+}
+
+/*grabs the parent container of all results*/
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.result {
+  text-align: center;
+  padding: 20px;
+}
