@@ -7,6 +7,11 @@ let base = "https://itunes.apple.com/search?term=";
 
 
 searchButton.addEventListener("click", submitRequest);
+searchBox.addEventListener("keypress", function(e){
+  if (e.keyCode === 13) {
+    submitRequest();
+  }
+});
 
 function submitRequest() {
   let query = searchBox.value;

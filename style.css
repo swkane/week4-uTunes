@@ -11,7 +11,7 @@ header h3 {
   font-style: italic;
 }
 
-.search-form {
+.search {
   display: flex;
   justify-content: space-around;
   padding: 15px 0;
