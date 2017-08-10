@@ -1,3 +1,11 @@
+
+/*TODO: fix background color repeating issue*/
+body {
+  background: linear-gradient(to left top, #054A91, #A30000);
+  height: auto;
+  color: white;
+}
+
 .container {
   margin: 0 auto;
   max-width: 80%;
@@ -37,4 +45,8 @@ button {
 .result {
   text-align: center;
   padding: 20px;
+}
+
+img {
+  border-radius: 4px;
 }

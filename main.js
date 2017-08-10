@@ -3,7 +3,7 @@ let searchButton = document.querySelector("button");
 let searchBox = document.querySelector('.search-input');
 
 
-let base = "https://itunes.apple.com/search?term=";
+let base = "https://itunes.apple.com/search?media=music&term=";
 
 
 searchButton.addEventListener("click", submitRequest);
@@ -36,6 +36,11 @@ function submitRequest() {
     }
   }
 }
+
+// TODO: Create a click event for whatever song you choose
+// TODO: Change the src of the audio element to match the chosen song
+
+// TODO: create a hover play icon on each album cover
 
 // grab the search param from .search-input
 
