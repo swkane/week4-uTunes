@@ -1,6 +1,8 @@
 let results = document.querySelector('.results');
 let searchButton = document.querySelector("button");
 let searchBox = document.querySelector('.search-input');
+let audio = document.querySelector('audio');
+let span = document.querySelector('span');
 
 
 let base = "https://itunes.apple.com/search?media=music&term=";
@@ -25,6 +27,9 @@ function submitRequest() {
   function getSongInfo(data) {
     console.log(`Here is the data: `,data);
     for (var i = 0; i < 25; i++) {
+      let sample = data.results[i].previewUrl;
+      let artist = data.results[i].artistName;
+      let track = data.results[i].trackName;
       let div = document.createElement('div');
       div.setAttribute("class", "result");
       div.innerHTML = `
@@ -32,10 +37,23 @@ function submitRequest() {
         <p class="song-title">${data.results[i].trackName}</p>
         <p class="artist-name">${data.results[i].artistName}</p>
       `;
+    //  console.log(data.results[i].previewUrl);
+      div.addEventListener("click", addSoundBit);
+      function addSoundBit() {
+        audio.setAttribute("src", sample);
+        audio.play();
+        span.innerHTML = `${artist} - ${track}`;
+      }
       results.appendChild(div);
     }
   }
 }
+
+// Give each result an id = i
+
+// Create an array of the .previewUrl values
+
+// Create a click event that says, when you click a div, grab the sound byte value of the same index as the id from soundSampleArr
 
 // TODO: Create a click event for whatever song you choose
 // TODO: Change the src of the audio element to match the chosen song
