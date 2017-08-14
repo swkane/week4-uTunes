@@ -60,7 +60,6 @@ function submitRequest() {
 
 
 // TODO: create a hover play icon on each album cover
-// TODO: when there are already search results, add the newest search to the top
 // This could be done with appending items to the beginning of a parent rather than the end
 
 // grab the search param from .search-input
