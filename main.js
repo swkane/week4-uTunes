@@ -1,13 +1,13 @@
+// Declaration of all of the html elements I will need to manipulate
 let results = document.querySelector('.results');
 let searchButton = document.querySelector("button");
 let searchBox = document.querySelector('.search-input');
 let audio = document.querySelector('audio');
 let span = document.querySelector('span');
 
-
 let base = "https://itunes.apple.com/search?media=music&term=";
 
-
+// When someone presses "Enter" key from the search bar it executes
 searchButton.addEventListener("click", submitRequest);
 searchBox.addEventListener("keypress", function(e){
   if (e.keyCode === 13) {
@@ -15,6 +15,7 @@ searchBox.addEventListener("keypress", function(e){
   }
 });
 
+// Function that pulls specific songs from iTunes API
 function submitRequest() {
   let query = searchBox.value;
   console.log(`This was your query: ${query}`);
@@ -24,7 +25,9 @@ function submitRequest() {
     response.json().then(getSongInfo)
   });
 
+// Appends retrieved data in a readable way
   function getSongInfo(data) {
+    results.innerHTML = "";
     console.log(`Here is the data: `,data);
     for (var i = 0; i < 25; i++) {
       let sample = data.results[i].previewUrl;
@@ -55,10 +58,10 @@ function submitRequest() {
 
 // Create a click event that says, when you click a div, grab the sound byte value of the same index as the id from soundSampleArr
 
-// TODO: Create a click event for whatever song you choose
-// TODO: Change the src of the audio element to match the chosen song
 
 // TODO: create a hover play icon on each album cover
+// TODO: when there are already search results, add the newest search to the top
+// This could be done with appending items to the beginning of a parent rather than the end
 
 // grab the search param from .search-input
 

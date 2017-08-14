@@ -26,17 +26,37 @@ audio {
 .search {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 15px 0;
 }
 
 .search-input {
   flex-basis: 70%;
   flex-shrink: 3;
+  box-shadow: 3px 3px;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  font-size: 15px;
+  outline: none;
 }
 
 button {
   flex-basis: 10%;
   flex-shrink: 1;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background-color: white;
+  outline: none;
+  border: none;
+  box-shadow: 3px 3px;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #9DC7C8;
+  color: #A30000;
+  box-shadow: none;
 }
 
 .search-input, button {
@@ -54,7 +74,7 @@ button {
 
 .result {
   text-align: center;
-  padding: 20px;
+  padding: 20px 40px;
 }
 
 .result:hover {
