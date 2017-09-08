@@ -3,7 +3,8 @@ let results = document.querySelector('.results');
 let searchButton = document.querySelector("button");
 let searchBox = document.querySelector('.search-input');
 let audio = document.querySelector('audio');
-let span = document.querySelector('span');
+let nowPlaying = document.querySelector('.now-playing');
+let instructions = document.querySelector('.instructions');
 
 let base = "https://itunes.apple.com/search?media=music&term=";
 
@@ -21,6 +22,7 @@ function submitRequest() {
   console.log(`This was your query: ${query}`);
   let url = `${base}${query}`;
   console.log(`This was your ${url}`);
+  instructions.innerHTML = `(Please Click a Song Below to Play It)`;
   fetch(url).then(function (response) {
     response.json().then(getSongInfo)
   });
@@ -45,36 +47,10 @@ function submitRequest() {
       function addSoundBit() {
         audio.setAttribute("src", sample);
         audio.play();
-        span.innerHTML = `${artist} - ${track}`;
+        nowPlaying.innerHTML = `${artist} - ${track}`;
+        instructions.innerHTML = ``;
       }
       results.appendChild(div);
     }
   }
 }
-
-// Give each result an id = i
-
-// Create an array of the .previewUrl values
-
-// Create a click event that says, when you click a div, grab the sound byte value of the same index as the id from soundSampleArr
-
-
-// TODO: create a hover play icon on each album cover
-// This could be done with appending items to the beginning of a parent rather than the end
-
-// grab the search param from .search-input
-
-// convert the typed text to encoded url
-
-//execute fetch with baseURL + translated param
-
-//append results in .results with a template literal
-
-// Single Param Example
-// https://itunes.apple.com/search?term=jack+johnson
-
-// Double Param Example
-// https://itunes.apple.com/search?term=jack+johnson&limit=25
-
-// Key value pairs are separated with an &
-// Spaces are separated with +

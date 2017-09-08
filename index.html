@@ -16,7 +16,7 @@
         <form action="audio">
           <audio class="music-player" controls="controls" src=""></audio>
         </form>
-        <h4>Now Playing: <span>[Please Search and Select an Artist Below]</span></h4>
+        <h4>Now Playing: <span class="now-playing">[Please Search and Select an Artist Below]</span></h4>
         <hr>
       </section>
       <section class="search">
@@ -24,9 +24,10 @@
           <button type="button" name="">Search</button>
       </section>
       <hr>
-      <h3>Search Results:</h3>
+      <h3>Search Results: <span class="instructions"></span></h3>
       <section class="results">
 
+  <!-- These divs are here to easily test the styling and layout of the search results without making a search, simply uncomment them to simulate a search -->
         <!-- <div class="result">
           <img src="http://via.placeholder.com/150" alt="album cover">
           <p class="song-title">Fool</p>
